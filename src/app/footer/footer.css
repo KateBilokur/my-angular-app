@@ -1,0 +1,21 @@
+.footer{
+  background-color: #00a1a1;
+  height: max-content;
+  color: aliceblue;
+  font-size: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 20px 25px 15px 25px;
+}
+p{
+  width: 100%;
+  text-align: center;
+}
+.arrow{
+  font-size: 40px;
+}
