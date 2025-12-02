@@ -1,0 +1,111 @@
+.article-card {
+  /* Загальний вигляд */
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  /* max-width: 780px; */
+  /* max-height: 780px; */
+  text-decoration: none; /* Прибираємо підкреслення з посилання */
+  color: #333; /* Колір тексту */
+
+  /* Візуальні ефекти */
+  background-color: #fff; /* Білий фон картки (на білому тлі сторінки) */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Легка тінь */
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden; /* Обрізаємо кути зображення */
+
+  /* Між елементами сітки */
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+
+.article-card:hover {
+  transform: translateY(-5px); /* Підняти картку */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Більш виразна тінь */
+  cursor:  pointer;
+}
+
+.card-image-wrapper {
+  /* Співвідношення сторін 4:3 для зображення */
+  width: 100%;
+}
+
+.card-image {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  object-fit: cover; /* Забезпечує коректне відображення зображення */
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #555; /* Сірий колір для мета-інформації */
+}
+
+.card-topic {
+  /* Використовуємо ваш колір для хедеру/футеру як акцент */
+  color: #00a1a1;
+  font-weight: 700;
+}
+
+.card-artist-name {
+    color: #888;
+    margin-left: 5px;
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+  /* Обмеження тексту двома рядками */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  /* Обмеження тексту трьома рядками */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-footer {
+  margin-top: auto; /* Притискає футер до низу */
+  padding-top: 10px;
+  border-top: 1px solid #eee; /* Тонка лінія-розділювач */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.read-more {
+  color: #00a1a1;
+  font-weight: 600;
+}
