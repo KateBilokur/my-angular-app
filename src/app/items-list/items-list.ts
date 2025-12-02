@@ -6,7 +6,6 @@ import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-items-list',
   imports: [ItemsCard,
-    ItemsList,
     NgFor,
     NgIf
   ],
