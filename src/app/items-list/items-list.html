@@ -1,20 +1,13 @@
-<div class="search-container">
-  <input
-    type="text"
-    class="search-input"
-    placeholder="Пошук..."
-    [(ngModel)]="searchText"
-    (ngModelChange)="filterItems()"
-  />
-</div>
-
-
-
+<input
+  type="text"
+  class="search-input"
+  placeholder="Пошук..."
+  [(ngModel)]="searchText"
+  (ngModelChange)="onSearchChange()"
+/>
 
 <app-items-card
-  *ngFor="let ModMusic of filteredMusic"
+  *ngFor="let ModMusic of musicList"
   [ModMusic]="ModMusic"
   (selectItem)="onItemSelected($event)">
 </app-items-card>
-
-

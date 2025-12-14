@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ModelModernMusic, ArticleTopic }
-from '../models/model-modern-music';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { ModelModernMusic, ArticleTopic } from '../models/model-modern-music';
 
 @Injectable({
   providedIn: 'root',
@@ -92,7 +92,22 @@ export class DataService {
        }
        ];
 
-       getItems(): ModelModernMusic[] {
-          return this.items;
-       }
+        private itemsSubject = new BehaviorSubject<ModelModernMusic[]>(this.items);
+
+        getItemsStream(): Observable<ModelModernMusic[]> {
+          return this.itemsSubject.asObservable();
+        }
+
+        getItems(): Observable<ModelModernMusic[]> {
+           return of(this.items);
+         }
+
+        filterItems(searchText: string): void {
+          const value = searchText.toLowerCase();
+          const filtered = this.items.filter(item =>
+            item.title.toLowerCase().includes(value)
+          );
+          this.itemsSubject.next(filtered);
+        }
+
 }
