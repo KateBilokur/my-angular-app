@@ -41,7 +41,14 @@
       <span class="card-date">
         {{ ModMusic.date_added | date:'dd.MM.yyyy' }}
       </span>
-      <span class="read-more">Читати далі →</span>
+      <button
+        class="read-more"
+        type="button"
+        (click)="onSelect()"
+      >
+        Детальніше →
+      </button>
+
     </div>
 
   </div>

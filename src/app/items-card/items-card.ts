@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ModelModernMusic } from '../shared/models/model-modern-music';
 import { NgIf, NgClass, DatePipe } from '@angular/common';
 
@@ -11,4 +11,10 @@ import { NgIf, NgClass, DatePipe } from '@angular/common';
 })
 export class ItemsCard {
   @Input() ModMusic!: ModelModernMusic;
+
+  @Output() selectItem = new EventEmitter<ModelModernMusic>();
+
+  onSelect(): void {
+    this.selectItem.emit(this.ModMusic);
+  }
 }

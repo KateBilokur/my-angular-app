@@ -1,17 +1,23 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { ItemsCard } from '../items-card/items-card';
 import { ModelModernMusic, ArticleTopic } from '../shared/models/model-modern-music';
-import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-items-list',
-  imports: [ItemsCard,
+  standalone: true,
+  imports: [
     NgFor,
-    NgIf
+    NgIf,
+    FormsModule,
+    ItemsCard
   ],
   templateUrl: './items-list.html',
   styleUrl: './items-list.css',
 })
+
 export class ItemsList {
   public ModernMusic: ModelModernMusic[] = [
     {
@@ -96,4 +102,20 @@ export class ItemsList {
   song_genre: "Поп-панк"
   }
   ];
+
+   onItemSelected(item: ModelModernMusic): void {
+      console.log('Обраний елемент:', item);
+   }
+  public searchText: string = '';
+  public filteredMusic: ModelModernMusic[] = this.ModernMusic;
+
+  filterItems(): void {
+    const value = this.searchText.toLowerCase();
+
+    this.filteredMusic = this.ModernMusic.filter(item =>
+      item.title.toLowerCase().includes(value)
+    );
+  }
+
+
 }
