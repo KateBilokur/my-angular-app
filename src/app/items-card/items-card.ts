@@ -1,13 +1,11 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModelModernMusic } from '../shared/models/model-modern-music';
-import { DatePipe, NgFor, NgIf } from '@angular/common';
+import { NgIf, NgClass, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-items-card',
-  imports: [NgFor,
-    NgIf,
-    DatePipe
-  ],
+  standalone: true,
+  imports: [NgIf, NgClass, DatePipe],
   templateUrl: './items-card.html',
   styleUrl: './items-card.css',
 })

@@ -1,5 +1,5 @@
 export enum ArticleTopic {
-  ARTIST = 'Аартист',
+  ARTIST = 'Артист',
   SONG = 'Пісня',
   GENRE = 'Жанр',
   GENERAL = 'Загальне',

@@ -1,21 +1,30 @@
 <a
   class="article-card"
-  aria-label="Перейти до повної статті про {{ ModMusic.title }}">
+  [ngClass]="{
+    'artist-card': ModMusic.topic === 'Артист',
+    'song-card': ModMusic.topic === 'Пісня',
+    'genre-card': ModMusic.topic === 'Жанр'
+  }"
+  aria-label="Перейти до повної статті про {{ ModMusic.title }}"
+>
   <div class="card-image-wrapper">
     <img
       [src]="ModMusic.image_url"
       [alt]="ModMusic.title"
       class="card-image"
-    >
+    />
   </div>
 
   <div class="card-content">
 
+
+
     <div class="card-meta">
       <span class="card-topic">
-        {{ ModMusic.topic}}
+        {{ ModMusic.topic }}
       </span>
-      <span *ngIf="ModMusic.artist_name" class="card-artist-name">
+
+      <span *ngIf="ModMusic.artist_name" class="card-artist-name" >
         • {{ ModMusic.artist_name }}
       </span>
     </div>
@@ -29,8 +38,11 @@
     </p>
 
     <div class="card-footer">
-      <span class="card-date">{{ ModMusic.date_added | date:'dd.MM.yyyy' }}</span>
+      <span class="card-date">
+        {{ ModMusic.date_added | date:'dd.MM.yyyy' }}
+      </span>
       <span class="read-more">Читати далі →</span>
     </div>
+
   </div>
 </a>
