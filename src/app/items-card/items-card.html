@@ -1,5 +1,6 @@
 <a
   class="article-card"
+  appHoverHighlight
   [ngClass]="{
     'artist-card': ModMusic.topic === 'Артист',
     'song-card': ModMusic.topic === 'Пісня',
@@ -34,8 +35,9 @@
     </h3>
 
     <p class="card-description">
-      {{ ModMusic.short_description }}
+      {{ ModMusic.short_description | truncate:100 }}
     </p>
+
 
     <div class="card-footer">
       <span class="card-date">

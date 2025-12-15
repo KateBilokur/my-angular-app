@@ -6,8 +6,9 @@
   (ngModelChange)="onSearchChange()"
 />
 
-<app-items-card
-  *ngFor="let ModMusic of musicList"
-  [ModMusic]="ModMusic"
-  (selectItem)="onItemSelected($event)">
-</app-items-card>
+<div *ngFor="let item of musicList$ | async">
+  <app-items-card
+    [ModMusic]="item"
+    (selectItem)="onItemSelected($event)"
+  ></app-items-card>
+</div>

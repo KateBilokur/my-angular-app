@@ -22,13 +22,6 @@
   margin-right: 25px;
 }
 
-
-.article-card:hover {
-  transform: translateY(-5px); /* Підняти картку */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Більш виразна тінь */
-  cursor:  pointer;
-}
-
 .card-image-wrapper {
   flex: 0 0 300px;
 }
