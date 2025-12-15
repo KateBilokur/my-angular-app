@@ -102,6 +102,10 @@ export class DataService {
            return of(this.items);
          }
 
+       getItemById(id: string): ModelModernMusic | undefined {
+         return this.items.find(item => item.id === id);
+       }
+
         filterItems(searchText: string): void {
           const value = searchText.toLowerCase();
           const filtered = this.items.filter(item =>

@@ -1,0 +1,98 @@
+.item-details {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 24px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок */
+.item-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Мета-інформація */
+.item-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.item-topic {
+  font-weight: 500;
+}
+
+/* Зображення */
+.item-image {
+  margin-bottom: 20px;
+}
+
+.item-image img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Короткий опис */
+.item-short {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Повний текст */
+.item-full p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+  white-space: pre-line;
+}
+
+/* Додаткова інформація */
+.item-extra {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.item-extra p {
+  margin: 4px 0;
+}
+
+/* Теги */
+.item-tags {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  background-color: #e6f4f4;
+  color: #007777;
+  border-radius: 20px;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+
+  font-size: 0.9rem;
+  color: #007777;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

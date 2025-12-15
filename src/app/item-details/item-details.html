@@ -1,0 +1,60 @@
+<div *ngIf="item" class="item-details">
+
+  <a routerLink="/items" class="back-link">
+    ← Повернутися до списку
+  </a>
+
+  <!-- Заголовок -->
+  <h1 class="item-title">
+    {{ item.title }}
+  </h1>
+
+  <!-- Мета-інформація -->
+  <div class="item-meta">
+    <span class="item-topic">{{ item.topic }}</span>
+    <span class="item-date">{{ item.date_added }}</span>
+  </div>
+
+  <!-- Зображення -->
+  <div class="item-image">
+    <img
+      [src]="item.image_url"
+      [alt]="item.title"
+    />
+  </div>
+
+  <!-- Повний опис -->
+  <div class="item-full">
+    <p>
+      {{ item.full_description }}
+    </p>
+  </div>
+
+  <!-- Додаткова інформація -->
+  <div class="item-extra">
+
+    <p *ngIf="item.artist_name">
+      <strong>Виконавець:</strong> {{ item.artist_name }}
+    </p>
+
+    <p *ngIf="item.song_title">
+      <strong>Пісня:</strong> {{ item.song_title }}
+    </p>
+
+    <p *ngIf="item.song_genre">
+      <strong>Жанр:</strong> {{ item.song_genre }}
+    </p>
+
+  </div>
+
+  <!-- Теги -->
+  <div class="item-tags" *ngIf="item.tags?.length">
+    <span
+      class="tag"
+      *ngFor="let tag of item.tags"
+    >
+      #{{ tag }}
+    </span>
+  </div>
+
+</div>

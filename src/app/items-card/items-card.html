@@ -41,13 +41,13 @@
       <span class="card-date">
         {{ ModMusic.date_added | date:'dd.MM.yyyy' }}
       </span>
-      <button
+      <a
         class="read-more"
-        type="button"
-        (click)="onSelect()"
+        [routerLink]="['/items', ModMusic.id]"
       >
-        Детальніше →
-      </button>
+        Читати далі →
+      </a>
+
 
     </div>
 
