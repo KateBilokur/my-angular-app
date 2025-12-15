@@ -113,5 +113,10 @@ export class DataService {
           );
           this.itemsSubject.next(filtered);
         }
+      addItem(item: ModelModernMusic): void {
+
+        this.items = [...this.items, item];
+        this.itemsSubject.next(this.items);
+      }
 
 }

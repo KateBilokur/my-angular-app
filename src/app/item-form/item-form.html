@@ -1,0 +1,73 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label>Назва</label>
+    <input type="text" formControlName="title">
+    <small *ngIf="itemForm.get('title')?.touched && itemForm.get('title')?.invalid">
+      Поле є обовʼязковим
+    </small>
+  </div>
+
+  <div>
+    <label>URL зображення</label>
+    <input type="text" formControlName="image_url">
+    <small *ngIf="itemForm.get('image_url')?.touched && itemForm.get('image_url')?.invalid">
+      Поле є обовʼязковим
+    </small>
+  </div>
+
+  <div>
+    <label>Короткий опис</label>
+    <textarea formControlName="short_description"></textarea>
+    <small *ngIf="itemForm.get('short_description')?.touched && itemForm.get('short_description')?.invalid">
+      Поле є обовʼязковим
+    </small>
+  </div>
+
+  <div>
+    <label>Повний опис</label>
+    <textarea formControlName="full_description"></textarea>
+    <small *ngIf="itemForm.get('full_description')?.touched && itemForm.get('full_description')?.invalid">
+      Поле є обовʼязковим
+    </small>
+  </div>
+
+  <div>
+    <label>Тематика</label>
+    <select formControlName="topic">
+      <option value="">Оберіть тему</option>
+      <option *ngFor="let t of topics" [value]="t">
+        {{ t }}
+      </option>
+    </select>
+    <small *ngIf="itemForm.get('topic')?.touched && itemForm.get('topic')?.invalid">
+      Оберіть тему
+    </small>
+  </div>
+
+  <div>
+    <label>Теги</label>
+    <input type="text" formControlName="tags">
+  </div>
+
+  <div>
+    <label>Артист</label>
+    <input type="text" formControlName="artist_name">
+  </div>
+
+  <div>
+    <label>Назва пісні</label>
+    <input type="text" formControlName="song_title">
+  </div>
+
+  <div>
+    <label>Жанр пісні</label>
+    <input type="text" formControlName="song_genre">
+  </div>
+
+  <button type="submit" [disabled]="itemForm.invalid">
+    Зберегти
+  </button>
+
+
+</form>
