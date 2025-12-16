@@ -28,6 +28,7 @@ export class ItemsList implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    this.dataService.loadItems();
     this.musicList$ = this.dataService.getItemsStream();
   }
 

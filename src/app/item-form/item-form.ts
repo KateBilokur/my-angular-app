@@ -35,34 +35,34 @@ export class ItemForm {
  ) {}
 
 
-  onSubmit(): void {
-    if (this.itemForm.invalid) {
-      this.itemForm.markAllAsTouched();
-      return;
-    }
+ onSubmit(): void {
+   if (this.itemForm.invalid) {
+     this.itemForm.markAllAsTouched();
+     return;
+   }
 
-    const formValue = this.itemForm.value;
+   const formValue = this.itemForm.value;
 
-    const newItem: ModelModernMusic = {
-      id: crypto.randomUUID(),
-      title: formValue.title!,
-      image_url: formValue.image_url!,
-      short_description: formValue.short_description!,
-      full_description: formValue.full_description!,
-      topic: formValue.topic as ArticleTopic,
+   const newItem: Omit<ModelModernMusic, 'id'> = {
+     title: formValue.title!,
+     image_url: formValue.image_url!,
+     short_description: formValue.short_description!,
+     full_description: formValue.full_description!,
+     topic: formValue.topic as ArticleTopic,
+     tags: formValue.tags
+       ? formValue.tags.split(',').map((t: string) => t.trim())
+       : [],
+     artist_name: formValue.artist_name || '',
+     song_title: formValue.song_title || undefined,
+     song_genre: formValue.song_genre || undefined,
+     date_added: new Date().toISOString().split('T')[0]
+   };
 
-      tags: formValue.tags
-        ? formValue.tags.split(',').map((t: string) => t.trim())
-        : [],
-      artist_name: formValue.artist_name || '',
-      song_title: formValue.song_title || undefined,
-      song_genre: formValue.song_genre || undefined,
-      date_added: new Date().toISOString().split('T')[0]
-    };
+   this.dataService.addItem(newItem as ModelModernMusic).subscribe(createdItem => {
+     this.router.navigate(['/items', createdItem.id]);
+     this.itemForm.reset();
+   });
+ }
 
-    this.dataService.addItem(newItem);
-    this.router.navigate(['/items', newItem.id]);
-    this.itemForm.reset();
-  }
 
 }
