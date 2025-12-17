@@ -119,5 +119,22 @@
       "artist_name": "Катерина Павленко",
       "date_added": "2025-12-16"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "password": "123456"
+    },
+    {
+      "id": 1765999926393,
+      "email": "example@gmail.com",
+      "passwordHash": "$2b$10$OIt230rDbVk8DKVWSKZKceyxP5KKgRG/9pTAip5U2tdPMEk9aRTk."
+    },
+    {
+      "id": 1766006899708,
+      "email": "example1@gmail.com",
+      "passwordHash": "$2b$10$nJF5zxSHKz/ZsBy/ynUgc.so3aoG2m5aBVmNQlSZYHmUy30XSVYGq"
+    }
   ]
 }

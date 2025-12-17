@@ -1,0 +1,33 @@
+<form class="auth-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h2>Реєстрація</h2>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input
+      type="text"
+      formControlName="email"
+      placeholder="Введіть email"
+    >
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Введіть пароль"
+    >
+  </div>
+
+  <button type="submit" class="btn primary">
+    Зареєструватися
+  </button>
+
+  <div class="auth-links">
+    <a routerLink="/" class="link">
+      ← Повернутися на головну
+    </a>
+
+  </div>
+</form>
+

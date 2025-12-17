@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { apiUrlInterceptor } from './shared/interceptors/api-url.interceptor';
+import { authInterceptor } from './shared/interceptors/auth.interceptor';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     importProvidersFrom(FormsModule),
     provideHttpClient(
-      withInterceptors([apiUrlInterceptor])
+      withInterceptors([apiUrlInterceptor, authInterceptor])
       )
 
   ]
